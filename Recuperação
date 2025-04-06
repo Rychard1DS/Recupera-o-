@@ -51,13 +51,13 @@ public class NotaFiscal
     public double Numero { get; set; }
     public Cliente Cliente { get; set; }
     public Fornecedor Fornecedor { get; set; }
-    public Lista Produto Produtos { get; set; }
+    public List<Produto> Produtos { get; set; }
 
     public NotaFiscal(Cliente cliente, Fornecedor fornecedor)
     {
         Cliente = cliente;
         Fornecedor = fornecedor;
-        Produtos = new Lista Produto();
+        Produtos = new List<Produto>();
     }
 
     public void AdicionaProduto(Produto produto)
