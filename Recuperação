@@ -1,0 +1,67 @@
+public class Fornecedor
+{
+    public string Cnpj { get; set; }
+    public string RazaoSocial { get; set; }
+
+    public Fornecedor(string nome, string cnpj)
+    {
+        RazaoSocial = nome;
+        Cnpj = cnpj;
+    }
+}
+
+public class Pessoa
+{
+    public string Nome { get; set; }
+    public string Telefone { get; set; }
+    public string Logradouro { get; set; }
+    public string Email { get; set; }
+    public string Usuario { get; set; }
+    public string Senha { get; set; }
+}
+
+public class Cliente : Pessoa
+{
+    public string Cpf { get; set; }
+    public string Rg { get; set; }
+
+    public Cliente(string cpf, string nome)
+    {
+        Cpf = cpf;
+        Nome = nome;
+    }
+}
+
+public class Produto
+{
+    public string Descricao { get; set; }
+    public double Valor { get; set; }
+
+    public Produto(string descricao, double valor)
+    {
+        Descricao = descricao;
+        Valor = valor;
+    }
+
+    public Produto() { }
+}
+
+public class NotaFiscal
+{
+    public double Numero { get; set; }
+    public Cliente Cliente { get; set; }
+    public Fornecedor Fornecedor { get; set; }
+    public Lista Produto Produtos { get; set; }
+
+    public NotaFiscal(Cliente cliente, Fornecedor fornecedor)
+    {
+        Cliente = cliente;
+        Fornecedor = fornecedor;
+        Produtos = new Lista Produto();
+    }
+
+    public void AdicionaProduto(Produto produto)
+    {
+        Produtos.Add(produto);
+    }
+}
